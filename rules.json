@@ -1,0 +1,34 @@
+[
+  {
+    "match": "any",
+    "rules":[
+      {
+        "field":"sender",
+        "predicate" : "contains",
+        "value" : "edX <news@edx.org>"
+      },
+      {
+        "field":"receiver",
+        "predicate" : "contains",
+        "value" : "mr.bhuvanes"
+      }
+    ],
+    "label" : "READ"
+  },
+  {
+    "match": "all",
+    "rules":[
+      {
+        "field":"sender",
+        "predicate" : "contains",
+        "value" : "edX <news@edx.org>"
+      },
+      {
+        "field":"receiver",
+        "predicate" : "not equal",
+        "value" : "edX <news@edx.org>"
+      }
+    ],
+    "label" : "UNREAD"
+  }
+]
